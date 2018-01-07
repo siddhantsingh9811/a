@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>audio</title>
+	<link rel="stylesheet" type="text/css" href="audio.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+	<div class="main">
+		<div class="bars">
+			<div class="bar1 b"></div>
+			<div class="bar2 b"></div>
+			<div class="bar3 b"></div>
+		</div>
+		<div class="section1">
+			<div class="a">
+				<div class="img"></div>
+				<div class="buttons">
+					<center>
+						<div class="name">HEAVY</div>
+						<div class="back" onclick="back()"><img src="Pre.png"></div>
+						<div class="pause" onclick="play()"><img src="Pause.png"></div>
+						<div class="forward"  onclick="next()"><img src="Next.png"></div>
+					</center>
+				</div>
+			</div>
+		</div>
+		<div class="section2"></div>
+		<div class="section3">
+			<ul>
+				<li id="a">Heavy</li>
+				<li id="b">Lets Hurt Tonight</li>
+				<li id="c">Lost on You</li>
+				<li id="d">No Vacancy</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var songno = 0;
+		var songs = ['1.mp3','2.mp3','3.mp3','4.mp3']
+		var img = ['url(1.jpg)','url(2.jpg)','url(3.jpg)','url(4.jpg)']
+		var song = new Audio();
+		function a(){
+			$('.img').css('background-image',img[songno]);
+			$('.section2').css('background-image',img[songno]);
+			var name = ['Heavy' , 'Lets Hurt Tonight' ,' Lost on You' , 'No Vacancy']
+			$(".name").html(name[songno]);
+			console.log(name[10])
+		}
+		$(document).ready(function() {
+			song.src = songs[songno]
+			playsong()
+		})
+		function playsong(){
+			song.play()
+		}
+		function play(){
+			if (song.paused) 
+			{
+				song.play();
+				$('.pause img').attr('src','Pause.png')
+			}
+			else 
+			{
+				song.pause();
+				$('.pause img').attr('src','Play.png')
+			}
+		}
+		function next(){
+			songno++
+			if (songno>3) {
+				songno = 0
+				song.src = '1.mp3'
+				song.play();
+				a()
+			} else {
+				song.src = songs[songno]
+				song.play();
+				console.log(songno)
+				a()
+				song.play();
+			}
+			
+		}
+		function back(){
+			songno--
+			if (songno<0) {
+				songno = 3
+				song.src = '4.mp3'
+				song.play();
+				a()
+			} else {
+				song.src = songs[songno]
+				song.play();
+				console.log(songno)
+				a()
+				song.play();
+			}			
+		}
+		function x(){
+			$('.a').css('border-radius','0')
+			$('.a').css('width','50vw')
+			$('.a').css('height','100vh')
+			$('.a').css('top','0')
+			$('.a').css('left','0')
+			$('.a').css('transform','translate(0,0) scale(1)')
+			$('.section3').css('visibility','visible')
+			$('.section3').css('height','95vh')
+			$('.section3').css('width','47vw')
+			$('.section3').css('right','2%')
+		}
+		function y(){
+			$('.a').css('border-radius','100%')
+			$('.a').css('width','400px')
+			$('.a').css('height','400px')
+			$('.a').css('top','50%')
+			$('.a').css('left','50%')
+			$('.a').css('transform','translate(-50%,-50%) scale(0.8)')
+			$('.section3').css('visibility','hidden')
+			$('.section3').css('height','0px')
+			$('.section3').css('width','0px')
+			$('.section3').css('right','20%')
+		}
+		$('.bars').click(function(){
+			if ($('.a').css('height') == '400px') 
+			{
+				x();
+			} 
+			else 
+			{
+				y();
+			}
+		})
+		$('#a').click(function(){
+			songno = 0;
+			song.src = '1.mp3'
+			playsong()
+			$('.img').css('background-image', img[songno])
+			$('.section2').css('background-image', img[songno])
+			var name = ['Heavy' , 'Lets Hurt Tonight' ,' Lost on You' , 'No Vacancy']
+			$(".name").html(name[songno]);
+		})
+		$('#b').click(function(){
+			songno = 1;
+			song.src = '2.mp3'
+			playsong()
+			$('.img').css('background-image', img[songno])
+			$('.section2').css('background-image', img[songno])
+			var name = ['Heavy' , 'Lets Hurt Tonight' ,' Lost on You' , 'No Vacancy']
+			$(".name").html(name[songno]);
+		})
+		$('#c').click(function(){
+			songno = 2;
+			song.src = '3.mp3'
+			playsong()
+			$('.img').css('background-image', img[songno])
+			$('.section2').css('background-image', img[songno])
+			var name = ['Heavy' , 'Lets Hurt Tonight' ,' Lost on You' , 'No Vacancy']
+			$(".name").html(name[songno]);
+		})
+		$('#d').click(function(){
+			songno = 3;
+			song.src = '4.mp3'
+			playsong()
+			$('.img').css('background-image', img[songno])
+			$('.section2').css('background-image', img[songno])
+			var name = ['Heavy' , 'Lets Hurt Tonight' ,' Lost on You' , 'No Vacancy']
+			$(".name").html(name[songno]);
+		})
+	</script>
+</body>
+</html>

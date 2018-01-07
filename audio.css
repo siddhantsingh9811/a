@@ -1,0 +1,160 @@
+body
+{
+margin: 0;
+padding: 0;
+}
+.section1
+{
+height: 100vh;
+width: 100vw;
+overflow: hidden;
+}
+.a
+{
+
+	transition: 0.5s;
+position: absolute;
+height: 400px;
+width: 400px;
+background-color: #EDE6E3;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%) scale(0.8);
+	border-radius: 100%;
+	overflow: hidden;
+	z-index: 3;
+	box-shadow: 0 0 10px 2px #222;
+}
+.img
+{
+position: relative;
+height: 50%;
+width: 100%;
+background-size: 100%;
+background-position: top;
+background-image: url('1.jpg');
+border-radius-: 20px;
+}
+.main
+{
+height: 100vh;
+width: 100vw;
+overflow: hidden;
+}
+.section2
+{
+
+position: absolute;
+top: 0;
+cursor: pointer;
+height: 100vh;
+width: 100vw;
+filter:blur(5px);
+z-index: 1;
+background-color: rgba(0, 0, 0, 0.7);
+background-image: url("1.jpg");
+background-size: cover;
+}
+
+.back
+{
+display: inline-block;
+height: auto;
+width: auto;
+background-color: black;
+border-radius: 100%;
+cursor: pointer;
+}
+.pause
+{
+display: inline-block;
+height: auto;
+width: auto;
+background-color: black;
+cursor: pointer;
+border-radius: 100%;
+}
+.forward
+{
+cursor: pointer;
+display: inline-block;
+height: auto;
+width: auto;
+background-color: black;
+border-radius: 100%;
+}
+
+.name
+{
+font-size: 30px;
+font-family: arial;
+padding-top: 30px;
+}
+audio
+{
+position: absolute;
+	top: 0;
+height: 0px;
+width: 0px;
+}
+.bars
+{
+position: absolute;
+top: 0;
+left: 95%;
+z-index: 100;
+cursor: pointer;
+}
+.b
+{
+height: 3px;
+width: 30px;
+background-color: black;
+margin: 5px;
+}
+.section3
+{
+transition: 0.2s;
+height: 0px;
+width: 0px;
+top: 4%;
+z-index: 10;
+right: 20%;
+position: absolute;
+background-color: #F6F3F2;
+border-radius: 5%;
+box-shadow: 0 0 10px 2px #222;
+visibility: hidden;
+}
+li
+{
+transition: 0.3s;
+height: 40px;
+width: auto;
+line-height: 40px;
+font-size: 30px;
+padding: 20px;
+font-family: arial;
+color: black;
+font-family: 'Oswald', sans-serif;
+}
+li:hover
+{
+font-size: 35px;
+cursor: pointer;
+}
+/*
+position: absolute;
+height: 100vh;
+width: 50vw;
+background-color: #EDE6E3;
+//top: 50%;
+//left: 50%;
+//transform: translate(-50%,-50%) scale(0.8);
+	//border-radius: 100%;
+	overflow: hidden;
+	z-index: 3;
+	box-shadow: 0 0 10px 2px #222;
+	float: left;
+
+
